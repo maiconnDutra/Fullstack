@@ -1,6 +1,6 @@
 ﻿using Aluno.Dominio;
 
-public interface IAlunoRepositorio
+public interface IAlunoServico
 {
     void Adicionar(Estudante estudante);
     List<Estudante> Listar();

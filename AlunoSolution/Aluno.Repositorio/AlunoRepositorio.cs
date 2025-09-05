@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Aluno.Dominio;
 
-namespace Aluno.Repositorio
+public class AlunoRepositorio : IAlunoRepositorio
 {
-    public class AlunoRepositorio : IAlunoRepositorio
-    {
-        public void Adicionar()
-        {
-            throw new NotImplementedException();
-        }
+    private static List<Estudante> _estudantes = new();
 
-        public List<int> Listar()
-        {
-            throw new NotImplementedException();
-        }
+    public void Adicionar(Estudante estudante)
+    {
+        _estudantes.Add(estudante);
+    }
+
+    public List<Estudante> Listar()
+    {
+        return _estudantes;
     }
 }
