@@ -2,6 +2,5 @@
 
 public interface IAlunoServico
 {
-    void Adicionar(Estudante estudante);
-    List<Estudante> Listar();
+    void AdicionarEstudante(string nome, decimal nota);
 }

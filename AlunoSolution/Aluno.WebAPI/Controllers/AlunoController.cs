@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AlunoController : ControllerBase
+public class EstudanteController : ControllerBase
 {
     private readonly IAlunoServico _servico;
 
-    public AlunoController(IAlunoServico servico)
+    public EstudanteController(IAlunoServico servico)
     {
         _servico = servico;
     }
@@ -15,13 +15,10 @@ public class AlunoController : ControllerBase
     [HttpPost]
     public IActionResult Post(Estudante estudante)
     {
-        _servico.Adicionar(estudante);
-        return Ok("Aluno cadastrado com sucesso!");
+        _servico.Adicionar(estudante); // Alterado para aceitar o objeto completo
+        return Ok("Estudante cadastrado!");
     }
 
     [HttpGet]
-    public IActionResult Get()
-    {
-        return Ok(_servico.Listar());
-    }
+    public IActionResult Get() => Ok(_servico.ObterTodos());
 }
